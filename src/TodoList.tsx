@@ -32,6 +32,10 @@ export const TodoList  = (props: TodolistPropsType) => {
     }
 
     const addTaskHandler =()=> {
+        if (newTaskTitle.trim() === "") {
+            return
+        }
+
         props.addTask(newTaskTitle)
         setNewTaskTitle('')
     }
