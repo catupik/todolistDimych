@@ -3,8 +3,8 @@ import { v1 } from 'uuid';
 import {type FilterValuesType, type TodolistType} from '../App';
 
 test('correct todolist should be removed', () => {
-    let todolistId1 = v1();
-    let todolistId2 = v1();
+    const todolistId1 = v1();
+    const todolistId2 = v1();
 
     const startState: Array<TodolistType> = [
         { id: todolistId1, title: "What to learn", filter: "all" },
@@ -19,8 +19,8 @@ test('correct todolist should be removed', () => {
 
 
 test('new todolist should be added', () => {
-    let todolistId1 = v1();
-    let todolistId2 = v1();
+    const todolistId1 = v1();
+    const todolistId2 = v1();
 
     const startState: Array<TodolistType> = [
         { id: todolistId1, title: "What to learn", filter: "all" },
@@ -36,8 +36,8 @@ test('new todolist should be added', () => {
 });
 
 test(' todolist should change its name', () => {
-    let todolistId1 = v1();
-    let todolistId2 = v1();
+    const todolistId1 = v1();
+    const todolistId2 = v1();
 
     const startState: Array<TodolistType> = [
         { id: todolistId1, title: "What to learn", filter: "all" },
@@ -54,8 +54,8 @@ test(' todolist should change its name', () => {
 });
 
 test(' correct filter should be changed', () => {
-    let todolistId1 = v1();
-    let todolistId2 = v1();
+    const todolistId1 = v1();
+    const todolistId2 = v1();
 
     const startState: Array<TodolistType> = [
         { id: todolistId1, title: "What to learn", filter: "all" },
@@ -70,3 +70,4 @@ test(' correct filter should be changed', () => {
     expect(endState.length).toBe(2);
     expect(endState[1].filter).toBe(newFilter);
 });
+
