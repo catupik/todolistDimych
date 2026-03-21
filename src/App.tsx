@@ -15,6 +15,7 @@ import Paper from '@mui/material/Paper';
 
 
 export type FilterValuesType = 'all' | 'completed' | 'active'
+
 export type TodolistType = {
     id: string;
     title: string;
@@ -55,7 +56,11 @@ function App() {
         setTodolists(filteredTodolist)
 
 
-        setTasksObj(({ [todolistId]: _, ...rest }) => rest)
+        setTasksObj(prev => {
+            const copy = { ...prev }
+            delete copy[todolistId]
+            return copy
+        })
 
 
     }
@@ -145,9 +150,9 @@ function App() {
                 </Toolbar>
             </AppBar>
 
-            <Container maxWidth={'sm'}>
+            <Container maxWidth={'xl'}>
 
-                <Grid container spacing={0} sx={{p: 10}}>
+                <Grid container spacing={0} sx={{ml: 2, mt: 10, p:5}}>
                     <AddItemForm addItem={addTodolist}/>
                 </Grid>
                 <Grid container spacing={3}>
@@ -163,7 +168,7 @@ function App() {
                     }
 
 
-                    return <Grid item>
+                    return <Grid size={{ xs: 12, sm: 6, md: 4 }}>
                         <Paper elevation={3} sx={{padding: '10px'}}>
 
                         <TodoList

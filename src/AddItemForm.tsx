@@ -34,7 +34,7 @@ export function AddItemForm(props: AddItemsFormPropType) {
     }
 
 
-    return <div>
+    return <div style={{display: 'flex',  alignItems: 'center'}}>
         <TextField  variant="outlined"  value={title}
                    onChange={onChangeHandler}
                    onKeyDown={onKeyDownHandler}
@@ -46,7 +46,7 @@ export function AddItemForm(props: AddItemsFormPropType) {
                    helperText={error}
         />
 
-        <IconButton  onClick={addTask} color={'info'}>
+        <IconButton  onClick={addTask} color={'info'} sx={{ '&:focus': { outline: 'none' }, ml: '10px' }}>
             <AddIcon />
         </IconButton>
 
