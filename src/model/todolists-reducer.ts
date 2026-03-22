@@ -52,9 +52,9 @@ export const addTodolistAC = (title: string) => {
 }
 
 export const changeTitleAC = (todolistID: string, title: string) => {
-    return {type: 'CHANGE-TITLE', id: todolistID, title}
+    return {type: 'CHANGE-TITLE', id: todolistID, title} as const
 }
 
-export const changeFilter = (todolistID: string, filter: FilterValuesType) => {
-    return {type: 'CHANGE-FILTER', id: todolistID, filter}
+export const changeFilterAC = (todolistID: string, filter: FilterValuesType) => {
+    return {type: 'CHANGE-FILTER', id: todolistID, filter} as const
 }
